@@ -99,10 +99,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dailyfresh_23',
-        'HOST': '192.168.159.131', # MySQL数据库地址
+        'HOST': '192.168.0.107', # MySQL数据库地址
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': 'mysql',
+        'PASSWORD': 'root',
+        'CHARSET':'utf-8',
     }
 }
 
