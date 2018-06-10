@@ -3,6 +3,7 @@ pymysql
 django-tinymce
 django-haystack==2.6
 django-redis==4.4
+django-celery
 itsdangerous
 celery
 Pillow

@@ -55,6 +55,8 @@ docker 环境：
      	
 运行程序：
 	启动celery 任务：
+	https://blog.csdn.net/michael_lbs/article/details/74923367
+	
 		 初始化dj celery表：
 		 	python manage.py migrate djcelery
 		 	
