@@ -9,7 +9,7 @@ from django.http import JsonResponse
 from orders.models import OrderInfo, OrderGoods
 from django.db import transaction
 from django.core.paginator import Paginator, EmptyPage
-from alipay import AliPay
+from alipay import Alipay as AliPay
 from django.conf import settings
 
 

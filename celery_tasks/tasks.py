@@ -1,3 +1,16 @@
+
+import os
+
+#https://blog.csdn.net/michael_lbs/article/details/74923367
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+print(BASE_DIR)
+
+# 为了配合django用户认证系统模型类的使用,需要增加导包路径
+import sys
+sys.path.insert(1, os.path.join(BASE_DIR, 'apps'))
+
 from celery import Celery
 from django.core.mail import send_mail
 from django.conf import settings
@@ -6,11 +19,22 @@ from django.template import loader
 import os
 from functools import wraps
 
+print("============",settings.STATICFILES_DIRS[0])
+
+
+
 # 创建Celery客户端
 # 参数1 异步任务位置 参数2 指定人物存放的队列(Redis)
-app = Celery('celery_tasks.tasks', broker='redis://192.168.159.131:6379/4')
+# app = Celery('celery_tasks.tasks', broker='redis://192.168.0.107:6379/4')
+from celery import task
 
-@app.task
+from celery import platforms
+
+platforms.C_FORCE_ROOT=True
+
+
+# @app.task
+@task.task()
 def send_active_email(to_email, user_name, token):
     subject = "天天生鲜用户激活"  # 标题
     body = ""  # 文本邮件体
@@ -22,8 +46,11 @@ def send_active_email(to_email, user_name, token):
     send_mail(subject, body, sender, receiver, html_message=html_body)
 
 
-@app.task
+# @app.task
+@task.task()
 def generate_static_index_html():
+
+    print('generate_static_index_html')
     """生成静态主页"""
 
     # 查询商品分类信息
