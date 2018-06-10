@@ -2,6 +2,10 @@ django==1.8.2
 pymysql
 django-tinymce
 django-haystack==2.6
+django-redis==4.4
 itsdangerous
 celery
 Pillow
+whoosh
+AliPay==0.7.4
+fdfs_client

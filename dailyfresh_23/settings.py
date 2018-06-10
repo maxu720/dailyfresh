@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import djcelery
+
+REDIS_IP='192.168.0.107'
+
+djcelery.setup_loader()
+BROKER_URL = 'redis://%s:6379/4' % REDIS_IP
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -49,6 +56,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'tinymce',  # 富文本编辑器
     'haystack',  # 全文检索
+    'djcelery',
     # 'haystack', # 全文检索
     # Django的用户认真系统规定,在注册应用时,应用的名称需要跟 'AUTH_USER_MODEL = 'users.User'' 里面的users保持一致
     'users',
@@ -103,7 +111,6 @@ DATABASES = {
         'PORT': '3306',
         'USER': 'root',
         'PASSWORD': 'root',
-        'CHARSET':'utf-8',
     }
 }
 
@@ -148,7 +155,7 @@ EMAIL_FROM = '天天生鲜<dailyfreshzxc@yeah.net>' # 发件人抬头
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://192.168.159.131:6379/5",
+        "LOCATION": "redis://%s:6379/5" % REDIS_IP,
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
@@ -209,3 +216,4 @@ DATABASES_ROUTERS = ['utils.db_router.MasterSlaveDBRouter']
 
 # 收集静态文件目录
 STATIC_ROOT = '/Users/zhangjie/Desktop/static_23'
+
