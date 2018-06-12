@@ -1,14 +1,20 @@
+#coding=utf-8
 
 import os
+import codecs
+
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dailyfresh_23.settings")
 
 #https://blog.csdn.net/michael_lbs/article/details/74923367
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-print(BASE_DIR)
+print('============',BASE_DIR)
 
 # 为了配合django用户认证系统模型类的使用,需要增加导包路径
 import sys
+sys.path.insert(1, BASE_DIR)
 sys.path.insert(1, os.path.join(BASE_DIR, 'apps'))
 
 from celery import Celery
@@ -92,7 +98,7 @@ def generate_static_index_html():
     # 获取静态文件路径
     file_path = os.path.join(settings.STATICFILES_DIRS[0], 'index.html')
     # 将生成的html数据，存储到静态文件夹
-    with open(file_path, 'w') as file:
+    with codecs.open(file_path, 'w',encoding='utf-8') as file:
         file.write(html_data)
 
 

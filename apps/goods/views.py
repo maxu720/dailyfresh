@@ -1,3 +1,5 @@
+#coding=utf-8
+
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from goods.models import GoodsCategory, Goods, GoodsSKU, IndexGoodsBanner, IndexCategoryGoodsBanner, IndexPromotionBanner

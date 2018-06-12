@@ -1,12 +1,4 @@
-import os
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-print(BASE_DIR)
-
-# 为了配合django用户认证系统模型类的使用,需要增加导包路径
-import sys
-sys.path.insert(1, os.path.join(BASE_DIR, 'apps'))
+#coding=utf-8
 
 from django.contrib import admin
 from goods.models import GoodsCategory, Goods, IndexPromotionBanner
