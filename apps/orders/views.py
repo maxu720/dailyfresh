@@ -4,11 +4,11 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from utils.views import LoginRequiredMixin, LoginRequiredJSONJMixin, TransactionAtomicMixin
 from django.core.urlresolvers import reverse
-from goods.models import GoodsSKU
+from apps.goods.models import GoodsSKU
 from django_redis import get_redis_connection
-from users.models import Address
+from apps.users.models import Address
 from django.http import JsonResponse
-from orders.models import OrderInfo, OrderGoods
+from apps.orders.models import OrderInfo, OrderGoods
 from django.db import transaction
 from django.core.paginator import Paginator, EmptyPage
 from alipay import Alipay as AliPay

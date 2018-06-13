@@ -23,10 +23,6 @@ BROKER_URL = 'redis://%s:6379/4' % REDIS_IP
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# 为了配合django用户认证系统模型类的使用,需要增加导包路径
-import sys
-sys.path.insert(1, os.path.join(BASE_DIR, 'apps'))
-
 # sys.path = [
 #     '',
 #     os.path.join(BASE_DIR, 'apps')
@@ -60,10 +56,10 @@ INSTALLED_APPS = (
     'djcelery',
     # 'haystack', # 全文检索
     # Django的用户认真系统规定,在注册应用时,应用的名称需要跟 'AUTH_USER_MODEL = 'users.User'' 里面的users保持一致
-    'users',
-    'goods',
-    'orders',
-    'cart',
+    'apps.users',
+    'apps.goods',
+    'apps.orders',
+    'apps.cart',
 )
 
 MIDDLEWARE_CLASSES = (

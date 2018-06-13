@@ -11,7 +11,7 @@
  Target Server Version : 50722
  File Encoding         : 65001
 
- Date: 12/06/2018 18:09:20
+ Date: 13/06/2018 13:45:01
 */
 
 SET NAMES utf8mb4;
@@ -145,7 +145,7 @@ CREATE TABLE `df_goods`  (
   `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `desc` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of df_goods
@@ -192,12 +192,12 @@ CREATE TABLE `df_goods_category`  (
 -- ----------------------------
 -- Records of df_goods_category
 -- ----------------------------
-INSERT INTO `df_goods_category` VALUES (1, '2017-10-16 03:00:01.655105', '2017-10-16 03:00:01.655201', '新鲜水果', 'fruit', 'group1/M00/00/00/CtM3BVnkILGACHh0AAAmv27pX4k2790330');
-INSERT INTO `df_goods_category` VALUES (2, '2017-10-16 03:00:26.853310', '2017-10-16 03:00:26.853397', '海鲜水产', 'seafood', 'group1/M00/00/00/CtM3BVnkIMqAW9MwAABHr3RQqFs8076962');
-INSERT INTO `df_goods_category` VALUES (3, '2017-10-16 03:00:41.396890', '2017-10-16 03:00:41.397121', '猪牛羊肉', 'meet', 'group1/M00/00/00/CtM3BVnkINmAEIKKAAAy1Tlm9So4047150');
-INSERT INTO `df_goods_category` VALUES (4, '2017-10-16 03:00:55.190135', '2017-10-16 03:00:55.190223', '禽类蛋品', 'egg', 'group1/M00/00/00/CtM3BVnkIOeAG0B6AAAqR4DoSUg1061194');
-INSERT INTO `df_goods_category` VALUES (5, '2017-10-16 03:01:24.116307', '2017-10-16 03:01:24.116640', '新鲜蔬菜', 'vegetables', 'group1/M00/00/00/CtM3BVnkIQSARC1UAAA-0ZoYkpM7754350');
-INSERT INTO `df_goods_category` VALUES (6, '2017-10-16 03:01:54.662968', '2017-10-16 03:01:54.663066', '速冻食品', 'ice', 'group1/M00/00/00/CtM3BVnkISKAJwJqAAA3sZPrVzQ4838643');
+INSERT INTO `df_goods_category` VALUES (1, '2017-10-16 03:00:01.655105', '2017-10-16 03:00:01.655201', '新鲜水果', 'fruit', 'static/images/banner01.jpg');
+INSERT INTO `df_goods_category` VALUES (2, '2017-10-16 03:00:26.853310', '2017-10-16 03:00:26.853397', '海鲜水产', 'seafood', 'static/images/banner02.jpg');
+INSERT INTO `df_goods_category` VALUES (3, '2017-10-16 03:00:41.396890', '2017-10-16 03:00:41.397121', '猪牛羊肉', 'meet', 'static/images/banner03.jpg');
+INSERT INTO `df_goods_category` VALUES (4, '2017-10-16 03:00:55.190135', '2017-10-16 03:00:55.190223', '禽类蛋品', 'egg', 'static/images/banner04.jpg');
+INSERT INTO `df_goods_category` VALUES (5, '2017-10-16 03:01:24.116307', '2017-10-16 03:01:24.116640', '新鲜蔬菜', 'vegetables', 'static/images/banner05.jpg');
+INSERT INTO `df_goods_category` VALUES (6, '2017-10-16 03:01:54.662968', '2017-10-16 03:01:54.663066', '速冻食品', 'ice', 'static/images/banner06.jpg');
 
 -- ----------------------------
 -- Table structure for df_goods_image
@@ -217,8 +217,8 @@ CREATE TABLE `df_goods_image`  (
 -- ----------------------------
 -- Records of df_goods_image
 -- ----------------------------
-INSERT INTO `df_goods_image` VALUES (1, '2017-10-16 03:26:50.235040', '2017-10-16 03:26:50.235119', 'group1/M00/00/01/CtM3BVnkJvqARg4OAAAm3lfXL-Q4989750', 1);
-INSERT INTO `df_goods_image` VALUES (2, '2017-10-16 03:26:58.043760', '2017-10-16 03:26:58.043856', 'group1/M00/00/01/CtM3BVnkJwKAMbGgAAAm3lfXL-Q2310134', 2);
+INSERT INTO `df_goods_image` VALUES (1, '2017-10-16 03:26:50.235040', '2017-10-16 03:26:50.235119', 'static/images/goods.jpg', 1);
+INSERT INTO `df_goods_image` VALUES (2, '2017-10-16 03:26:58.043760', '2017-10-16 03:26:58.043856', 'static/images/goods02.jpg', 2);
 
 -- ----------------------------
 -- Table structure for df_goods_sku
@@ -258,21 +258,21 @@ INSERT INTO `df_goods_sku` VALUES (7, '2017-10-16 03:15:53.812181', '2017-10-16 
 INSERT INTO `df_goods_sku` VALUES (8, '2017-10-16 03:16:24.763232', '2017-10-16 03:16:24.763324', '扇贝', '简介', '500g', 56.60, 13, 0, 'static/images/goods/goods007.jpg', 1, 2, 7);
 INSERT INTO `df_goods_sku` VALUES (9, '2017-10-16 03:17:13.426611', '2017-10-16 03:17:13.426790', '基围虾', '简介', '500g', 100.90, 14, 0, 'static/images/goods/goods008.jpg', 1, 2, 8);
 INSERT INTO `df_goods_sku` VALUES (10, '2017-10-16 03:17:47.656066', '2017-10-16 03:17:47.656152', '猪肉', '简介', '500g', 23.99, 100, 0, 'static/images/goods/goods009.jpg', 1, 3, 9);
-INSERT INTO `df_goods_sku` VALUES (11, '2017-10-16 03:18:15.497630', '2017-10-16 03:18:15.497764', '牛肉', '简介', '500g', 34.99, 100, 0, 'static/images/goods/goods0010.jpg', 1, 3, 10);
-INSERT INTO `df_goods_sku` VALUES (12, '2017-10-16 03:18:44.453933', '2017-10-16 03:18:44.454010', '羊肉', '简介', '500g', 56.99, 100, 0, 'static/images/goods/goods0011.jpg', 1, 3, 11);
-INSERT INTO `df_goods_sku` VALUES (13, '2017-10-16 03:19:10.209472', '2017-10-16 03:19:10.209556', '牛排', '简介', '500g', 99.99, 100, 0, 'static/images/goods/goods0012.jpg', 1, 3, 12);
-INSERT INTO `df_goods_sku` VALUES (14, '2017-10-16 03:19:44.020204', '2017-10-16 03:19:44.020284', '盒装鸡蛋', '简介', '500g', 23.00, 100, 0, 'static/images/goods/goods0013.jpg', 1, 4, 13);
-INSERT INTO `df_goods_sku` VALUES (15, '2017-10-16 03:20:20.962831', '2017-10-16 03:20:20.963038', '鸡肉', '简介', '500g', 32.00, 100, 0, 'static/images/goods/goods0014.jpg', 1, 4, 14);
-INSERT INTO `df_goods_sku` VALUES (16, '2017-10-16 03:20:53.724305', '2017-10-16 03:20:53.724397', '鸭蛋', '简介', '盒', 45.00, 121, 0, 'static/images/goods/goods0015.jpg', 1, 4, 15);
-INSERT INTO `df_goods_sku` VALUES (17, '2017-10-16 03:21:22.965398', '2017-10-16 03:21:22.965474', '鸡腿', '简介', '500g', 45.00, 12, 0, 'static/images/goods/goods0016.jpg', 1, 4, 16);
-INSERT INTO `df_goods_sku` VALUES (18, '2017-10-16 03:22:04.462490', '2017-10-16 03:22:04.462571', '白菜', '简介', '500g', 4.50, 100, 0, 'static/images/goods/goods0017.jpg', 1, 5, 17);
-INSERT INTO `df_goods_sku` VALUES (19, '2017-10-16 03:22:31.745392', '2017-10-16 03:22:31.745499', '芹菜', '简介', '500g', 3.50, 12, 0, 'static/images/goods/goods0018.jpg', 1, 5, 18);
-INSERT INTO `df_goods_sku` VALUES (20, '2017-10-16 03:23:21.161526', '2017-10-16 03:23:21.162070', '香菜', '简介', '500g', 7.90, 100, 0, 'static/images/goods/goods0019.jpg', 1, 5, 19);
-INSERT INTO `df_goods_sku` VALUES (21, '2017-10-16 03:23:46.986158', '2017-10-16 03:23:46.986234', '冬瓜', '简介', '500g', 12.99, 100, 0, 'static/images/goods/goods0020.jpg', 1, 5, 20);
-INSERT INTO `df_goods_sku` VALUES (22, '2017-10-16 03:24:10.445214', '2017-10-16 03:24:10.445291', '鱼丸', '简介', '500g', 66.00, 12, 0, 'static/images/goods/goods0021.jpg', 1, 6, 21);
-INSERT INTO `df_goods_sku` VALUES (23, '2017-10-16 03:24:37.927158', '2017-10-16 03:24:37.927235', '蟹棒', '简介', '500g', 68.00, 100, 0, 'static/images/goods/goods0022.jpg', 1, 6, 22);
-INSERT INTO `df_goods_sku` VALUES (24, '2017-10-16 03:25:18.235816', '2017-10-16 03:25:18.235901', '虾丸', '简介', '500g', 89.99, 100, 0, 'static/images/goods/goods0023.jpg', 1, 6, 23);
-INSERT INTO `df_goods_sku` VALUES (25, '2017-10-16 03:25:56.170531', '2017-10-16 03:25:56.170611', '速冻水饺', '简介', '袋', 20.00, 100, 0, 'static/images/goods/goods0024.jpg', 1, 6, 24);
+INSERT INTO `df_goods_sku` VALUES (11, '2017-10-16 03:18:15.497630', '2017-10-16 03:18:15.497764', '牛肉', '简介', '500g', 34.99, 100, 0, 'static/images/goods/goods010.jpg', 1, 3, 10);
+INSERT INTO `df_goods_sku` VALUES (12, '2017-10-16 03:18:44.453933', '2017-10-16 03:18:44.454010', '羊肉', '简介', '500g', 56.99, 100, 0, 'static/images/goods/goods011.jpg', 1, 3, 11);
+INSERT INTO `df_goods_sku` VALUES (13, '2017-10-16 03:19:10.209472', '2017-10-16 03:19:10.209556', '牛排', '简介', '500g', 99.99, 100, 0, 'static/images/goods/goods012.jpg', 1, 3, 12);
+INSERT INTO `df_goods_sku` VALUES (14, '2017-10-16 03:19:44.020204', '2017-10-16 03:19:44.020284', '盒装鸡蛋', '简介', '500g', 23.00, 100, 0, 'static/images/goods/goods013.jpg', 1, 4, 13);
+INSERT INTO `df_goods_sku` VALUES (15, '2017-10-16 03:20:20.962831', '2017-10-16 03:20:20.963038', '鸡肉', '简介', '500g', 32.00, 100, 0, 'static/images/goods/goods014.jpg', 1, 4, 14);
+INSERT INTO `df_goods_sku` VALUES (16, '2017-10-16 03:20:53.724305', '2017-10-16 03:20:53.724397', '鸭蛋', '简介', '盒', 45.00, 121, 0, 'static/images/goods/goods015.jpg', 1, 4, 15);
+INSERT INTO `df_goods_sku` VALUES (17, '2017-10-16 03:21:22.965398', '2017-10-16 03:21:22.965474', '鸡腿', '简介', '500g', 45.00, 12, 0, 'static/images/goods/goods016.jpg', 1, 4, 16);
+INSERT INTO `df_goods_sku` VALUES (18, '2017-10-16 03:22:04.462490', '2017-10-16 03:22:04.462571', '白菜', '简介', '500g', 4.50, 100, 0, 'static/images/goods/goods017.jpg', 1, 5, 17);
+INSERT INTO `df_goods_sku` VALUES (19, '2017-10-16 03:22:31.745392', '2017-10-16 03:22:31.745499', '芹菜', '简介', '500g', 3.50, 12, 0, 'static/images/goods/goods018.jpg', 1, 5, 18);
+INSERT INTO `df_goods_sku` VALUES (20, '2017-10-16 03:23:21.161526', '2017-10-16 03:23:21.162070', '香菜', '简介', '500g', 7.90, 100, 0, 'static/images/goods/goods019.jpg', 1, 5, 19);
+INSERT INTO `df_goods_sku` VALUES (21, '2017-10-16 03:23:46.986158', '2017-10-16 03:23:46.986234', '冬瓜', '简介', '500g', 12.99, 100, 0, 'static/images/goods/goods020.jpg', 1, 5, 20);
+INSERT INTO `df_goods_sku` VALUES (22, '2017-10-16 03:24:10.445214', '2017-10-16 03:24:10.445291', '鱼丸', '简介', '500g', 66.00, 12, 0, 'static/images/goods/goods021.jpg', 1, 6, 21);
+INSERT INTO `df_goods_sku` VALUES (23, '2017-10-16 03:24:37.927158', '2017-10-16 03:24:37.927235', '蟹棒', '简介', '500g', 68.00, 100, 0, 'static/images/goods/goods022.jpg', 1, 6, 22);
+INSERT INTO `df_goods_sku` VALUES (24, '2017-10-16 03:25:18.235816', '2017-10-16 03:25:18.235901', '虾丸', '简介', '500g', 89.99, 100, 0, 'static/images/goods/goods023.jpg', 1, 6, 23);
+INSERT INTO `df_goods_sku` VALUES (25, '2017-10-16 03:25:56.170531', '2017-10-16 03:25:56.170611', '速冻水饺', '简介', '袋', 20.00, 100, 0, 'static/images/goods/goods024.jpg', 1, 6, 24);
 
 -- ----------------------------
 -- Table structure for df_index_category_goods
@@ -351,10 +351,10 @@ CREATE TABLE `df_index_goods`  (
 -- ----------------------------
 -- Records of df_index_goods
 -- ----------------------------
-INSERT INTO `df_index_goods` VALUES (1, '2017-10-16 03:27:56.534441', '2017-10-16 03:27:56.534522', 'group1/M00/00/01/CtM3BVnkJzyASv1nAACpB-LsCdE4728457', 0, 3);
-INSERT INTO `df_index_goods` VALUES (2, '2017-10-16 03:28:10.145716', '2017-10-16 03:28:10.145795', 'group1/M00/00/01/CtM3BVnkJ0qARP2PAAC3B-z8J2c2451336', 1, 5);
-INSERT INTO `df_index_goods` VALUES (3, '2017-10-16 03:28:30.520445', '2017-10-16 03:28:30.520521', 'group1/M00/00/01/CtM3BVnkJ16AWegCAAETwXb_pso1012026', 2, 10);
-INSERT INTO `df_index_goods` VALUES (4, '2017-10-16 03:32:40.934947', '2017-10-16 03:32:40.935037', 'group1/M00/00/01/CtM3BVnkKFiAXsNcAAD0akkXmFo4487232', 3, 6);
+INSERT INTO `df_index_goods` VALUES (1, '2017-10-16 03:27:56.534441', '2017-10-16 03:27:56.534522', 'static/images/slide.jpg', 0, 3);
+INSERT INTO `df_index_goods` VALUES (2, '2017-10-16 03:28:10.145716', '2017-10-16 03:28:10.145795', 'static/images/slide02.jpg', 1, 5);
+INSERT INTO `df_index_goods` VALUES (3, '2017-10-16 03:28:30.520445', '2017-10-16 03:28:30.520521', 'static/images/slide03.jpg', 2, 10);
+INSERT INTO `df_index_goods` VALUES (4, '2017-10-16 03:32:40.934947', '2017-10-16 03:32:40.935037', 'static/images/slide04.jpg', 3, 6);
 
 -- ----------------------------
 -- Table structure for df_index_promotion
@@ -374,8 +374,8 @@ CREATE TABLE `df_index_promotion`  (
 -- ----------------------------
 -- Records of df_index_promotion
 -- ----------------------------
-INSERT INTO `df_index_promotion` VALUES (1, '2017-10-16 02:57:52.707965', '2017-10-16 06:16:43.461496', '吃货暑假趴', 'http://www.itcast.cn', 'group1/M00/00/00/CtM3BVnkIDGATx4aAAA2pLUeB600278858', 1);
-INSERT INTO `df_index_promotion` VALUES (2, '2017-10-16 02:58:21.916410', '2017-10-16 06:16:32.600365', '盛夏尝鲜季', 'http://www.itheima.com', 'group1/M00/00/00/CtM3BVnkIE6AA2o8AAA98yvCs1I9520126', 0);
+INSERT INTO `df_index_promotion` VALUES (1, '2017-10-16 02:57:52.707965', '2017-10-16 06:16:43.461496', '吃货暑假趴', 'http://www.itcast.cn', 'static/images/adv02.jpg', 1);
+INSERT INTO `df_index_promotion` VALUES (2, '2017-10-16 02:58:21.916410', '2017-10-16 06:16:32.600365', '盛夏尝鲜季', 'http://www.itheima.com', 'static/images/adv02.jpg', 0);
 
 -- ----------------------------
 -- Table structure for df_order_goods
@@ -451,7 +451,7 @@ INSERT INTO `df_users` VALUES (3, 'pbkdf2_sha256$20000$mNAQjFAZw7Py$4T0XpRnM9iDt
 INSERT INTO `df_users` VALUES (5, 'pbkdf2_sha256$20000$cPuLjhR1GtEN$UjP06YetOv+6caKTvPMZQMEMxMh7VbIJOHhG5XQlXPM=', NULL, 0, '250977743', '', '', '250977745@qq.com', 0, 0, '2018-02-25 08:38:55.392169', '2018-02-25 08:38:55.441432', '2018-02-25 08:38:55.445087');
 INSERT INTO `df_users` VALUES (6, 'pbkdf2_sha256$20000$dy4ZWsS5YLan$3qcFmoXJSD0Uhk2htKT/d7YNXew6mzmNm83jBbkvlTI=', NULL, 0, 'aaaaaaaa', '', '', '250977745@qq.com', 0, 0, '2018-02-25 08:49:55.347470', '2018-02-25 08:49:55.396016', '2018-02-25 08:49:55.405161');
 INSERT INTO `df_users` VALUES (7, 'pbkdf2_sha256$20000$bIeuvMHv4Qnc$qs5/8ZJ/oApMYnmPABzaLrxD/3L2g/uihetfpVOuDUQ=', '2018-03-14 08:57:41.457595', 0, '444444444444', '', '', '250977745@qq.com', 0, 1, '2018-02-25 09:25:31.834776', '2018-02-25 09:25:31.882598', '2018-02-25 10:04:44.909413');
-INSERT INTO `df_users` VALUES (8, 'pbkdf2_sha256$20000$gV2mOhRyTkk3$xJYXXuA3PdWZuBQYTEHyMgep6FAwZp6pGhx3B9UdTvs=', '2018-06-12 10:07:55.701042', 1, '12345', '', '', '250977745@qq.com', 1, 1, '2018-02-27 12:34:45.893422', '2018-02-27 12:34:45.922522', '2018-02-27 12:34:45.922547');
+INSERT INTO `df_users` VALUES (8, 'pbkdf2_sha256$20000$gV2mOhRyTkk3$xJYXXuA3PdWZuBQYTEHyMgep6FAwZp6pGhx3B9UdTvs=', '2018-06-13 05:40:38.696716', 1, '12345', '', '', '250977745@qq.com', 1, 1, '2018-02-27 12:34:45.893422', '2018-02-27 12:34:45.922522', '2018-02-27 12:34:45.922547');
 INSERT INTO `df_users` VALUES (9, 'pbkdf2_sha256$20000$rxMtnLb4Z0j0$e4i6+JrzxZ/KtLi3oTUgjG6l5JknsF/r0gvCn0+4fm0=', '2018-05-20 09:04:37.316767', 1, 'admin123', '', '', '', 1, 1, '2018-03-09 12:08:40.026383', '2018-03-09 12:08:40.078487', '2018-03-09 12:08:40.078516');
 
 -- ----------------------------

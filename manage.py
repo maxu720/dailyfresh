@@ -8,6 +8,8 @@ try:
 except:
     pass
 
+print(sys.path)
+
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dailyfresh_23.settings")

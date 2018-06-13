@@ -1,7 +1,7 @@
 #coding=utf-8
 
 from django.contrib import admin
-from goods.models import GoodsCategory, Goods, IndexPromotionBanner
+from ..goods.models import GoodsCategory, Goods, IndexPromotionBanner
 from celery_tasks.tasks import generate_static_index_html
 from django.core.cache import cache
 

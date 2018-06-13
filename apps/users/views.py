@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.views.generic import View, TemplateView
 from django.core.urlresolvers import reverse
 import re
-from users.models import User, Address
+from ..users.models import User, Address
 from django import db
 from celery_tasks.tasks import send_active_email
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
@@ -14,7 +14,7 @@ from itsdangerous import SignatureExpired
 from django.contrib.auth import authenticate, login, logout
 from utils.views import LoginRequiredMixin
 from django_redis import get_redis_connection
-from goods.models import GoodsSKU
+from ..goods.models import GoodsSKU
 
 
 # Create your views here.
