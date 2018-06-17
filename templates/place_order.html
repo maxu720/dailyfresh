@@ -111,7 +111,7 @@
 					sku_ids: "{{ sku_ids }}",
                     csrfmiddlewaretoken: "{{ csrf_token }}"
 				};
-				$.post('#', order_data, function(data){
+				$.post('commit', order_data, function(data){
 					if (1 == data.code) {
                         location.href = '/users/login';
                     } else if (6 == data.code) {

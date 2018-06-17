@@ -15,7 +15,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 import djcelery
 
-REDIS_IP='localhost'
+REDIS_IP='192.168.0.105'
 
 djcelery.setup_loader()
 BROKER_URL = 'redis://%s:6379/4' % REDIS_IP
@@ -104,7 +104,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dailyfresh_23',
-        'HOST': 'localhost', # MySQL数据库地址
+        'HOST': '192.168.0.105', # MySQL数据库地址
         'PORT': '3306',
         'USER': 'root',
         'PASSWORD': 'root',
