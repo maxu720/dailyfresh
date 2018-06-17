@@ -1,3 +1,5 @@
+#coding=utf-8
+
 from django.db import models
 from utils.models import BaseModel
 # 富文本编辑器字段

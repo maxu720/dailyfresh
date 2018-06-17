@@ -1,3 +1,4 @@
+#coding=utf-8
 """
 Django settings for dailyfresh_23 project.
 
@@ -14,17 +15,13 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 import djcelery
 
-REDIS_IP='192.168.0.107'
+REDIS_IP='localhost'
 
 djcelery.setup_loader()
 BROKER_URL = 'redis://%s:6379/4' % REDIS_IP
-CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+# CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# 为了配合django用户认证系统模型类的使用,需要增加导包路径
-import sys
-sys.path.insert(1, os.path.join(BASE_DIR, 'apps'))
 
 # sys.path = [
 #     '',
@@ -59,10 +56,10 @@ INSTALLED_APPS = (
     'djcelery',
     # 'haystack', # 全文检索
     # Django的用户认真系统规定,在注册应用时,应用的名称需要跟 'AUTH_USER_MODEL = 'users.User'' 里面的users保持一致
-    'users',
-    'goods',
-    'orders',
-    'cart',
+    'apps.users',
+    'apps.goods',
+    'apps.orders',
+    'apps.cart',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -107,7 +104,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dailyfresh_23',
-        'HOST': '192.168.0.107', # MySQL数据库地址
+        'HOST': 'localhost', # MySQL数据库地址
         'PORT': '3306',
         'USER': 'root',
         'PASSWORD': 'root',
@@ -173,11 +170,12 @@ SESSION_CACHE_ALIAS = "default"
 LOGIN_URL = '/users/login'
 
 # 搭配自定义的文件存储系统使用的,指定文件存储到fdfs时,找哪个类来处理
-DEFAULT_FILE_STORAGE = 'utils.fastdfs.storage.FastDFSStorage'
-# 配置client.conf的路径
-CLIENT_CONF = os.path.join(BASE_DIR, 'utils/fastdfs/client.conf')
-# 配置nginx的ip
-SERVER_IP = 'http://192.168.159.131:8888/'
+# DEFAULT_FILE_STORAGE = 'utils.fastdfs.storage.FastDFSStorage'
+# # 配置client.conf的路径
+# CLIENT_CONF = os.path.join(BASE_DIR, 'utils/fastdfs/client.conf')
+# # 配置nginx的ip
+# # SERVER_IP = 'http://192.168.159.131:8888/'
+# SERVER_IP = 'http://localhost/'
 
 # 配置富文本编辑器的样式
 TINYMCE_DEFAULT_CONFIG = {

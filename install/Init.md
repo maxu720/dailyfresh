@@ -14,21 +14,24 @@ docker 环境：
 	
 	fdfs
 	
+		镜像
+			
+            fastdfs-tracker
+
+                cd wl-rancher-catalog/dockerfiles/fastdfs/fastdfs-tracker
+                docker build -t fastdfs_tracker .
+
+            fastdfs-storage
+
+                cd wl-rancher-catalog/dockerfiles/fastdfs/fastdfs-storage
+                docker build -t fastdfs_storage .
+		
+		运行
+			
+			docker run -ti --rm --name tracker -p 22122:22122 fastdfs_tracker
+
+			docker run -ti --rm --name storage --link tracker:tracker -p 80:80 -e TRACKER=tracker fastdfs_storage
 	
-		Run as a tracker
-            docker run -d --name tracker -v ~/data/fastdfs/tracker:/data/tracker -p 22122:22122 fdfs_tracker
-            
-           https://github.com/phinexdaz/fdfs_storage
-
-            port: tracker default port is 22122
-            base_path: map the path "/data/tracker"
-            
-         Run as a storage
-            docker run -d --name storage -v ~/data/fastdfs/storage:/data/storage --link tracker:tracker -p 80:80 -e TRACKER=tracker fdfs_storage
-
-            port: nginx default port is 80
-            base_path and store_path0: map the path "/data/storage"
-            TRACKER: tracker container's name
 		
 依赖包：
 	
@@ -37,7 +40,6 @@ docker 环境：
         apt-get install gcc
         pip install fdfs_client
         
-	
 	
 初始化数据库：
 	
@@ -60,7 +62,7 @@ docker 环境：
 		 初始化dj celery表：
 		 	python manage.py migrate djcelery
 		 	
-		 python manage.py celery worker -1 info
+		 python manage.py celery worker -l info
 		 
 
 	创建dj管理员密码：

@@ -1,5 +1,6 @@
+#coding=utf-8
 from django.conf.urls import url
-from cart import views
+from . import views
 
 urlpatterns =[
     # 添加购物车 : http://127.0.0.1:8000/cart/add

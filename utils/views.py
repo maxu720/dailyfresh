@@ -1,14 +1,24 @@
+#coding=utf-8
+
 from functools import wraps
 from django.db import transaction
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+
+from django.views.generic import View
 
 
 class LoginRequiredMixin(object):
     """验证用户是否登陆"""
     @classmethod
     def as_view(cls, **initkwargs):
-        view = super().as_view(**initkwargs)
+        try:
+            s = super()
+            view = super().as_view(**initkwargs)
+        except:
+            s = super(LoginRequiredMixin,cls)
+            view = s.as_view(**initkwargs)
+
         return login_required(view)
 
 
@@ -29,7 +39,10 @@ class LoginRequiredJSONJMixin(object):
     @classmethod
     def as_view(cls, **initkwargs):
         """使用login_required装饰器,装饰View的as_view()执行之后的结果"""
-        view = super().as_view(**initkwargs)
+        try:
+            view = super().as_view(**initkwargs)
+        except:
+            view = super(LoginRequiredJSONJMixin,cls).as_view(**initkwargs)
 
         # 没有把装饰之后的结果返回,只把最原始的结果返回
         # return view
@@ -44,8 +57,10 @@ class TransactionAtomicMixin(object):
     @classmethod
     def as_view(cls, **initkwargs):
         """使用login_required装饰器,装饰View的as_view()执行之后的结果"""
-        view = super().as_view(**initkwargs)
-
+        try:
+            view = super().as_view(**initkwargs)
+        except:
+            view = super(TransactionAtomicMixin,cls).as_view(**initkwargs)
         # 把view装饰装饰之后的结果,返回
         return transaction.atomic(view)
 

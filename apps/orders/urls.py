@@ -1,5 +1,7 @@
+#coding=utf-8
+
 from django.conf.urls import url
-from orders import views
+from ..orders import views
 
 
 urlpatterns = [

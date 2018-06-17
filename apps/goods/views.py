@@ -1,6 +1,8 @@
+#coding=utf-8
+
 from django.shortcuts import render, redirect
 from django.views.generic import View
-from goods.models import GoodsCategory, Goods, GoodsSKU, IndexGoodsBanner, IndexCategoryGoodsBanner, IndexPromotionBanner
+from .models import GoodsCategory, Goods, GoodsSKU, IndexGoodsBanner, IndexCategoryGoodsBanner, IndexPromotionBanner
 from django.core.cache import cache
 from django_redis import get_redis_connection
 from django.core.urlresolvers import reverse

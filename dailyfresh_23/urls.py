@@ -1,3 +1,5 @@
+#coding=utf-8
+
 """dailyfresh_23 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,16 +17,15 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-import haystack.urls
 
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^users/', include('users.urls', namespace='users')),
-    url(r'^', include('goods.urls', namespace='goods')),
+    url(r'^users/', include('apps.users.urls', namespace='users')),
+    url(r'^', include('apps.goods.urls', namespace='goods')),
     url(r'^tinymce/', include('tinymce.urls')),
-    url(r'^search/', include(haystack.urls)),
-    url(r'^cart/', include('cart.urls', namespace='cart')),
+    url(r'^search/', include('haystack.urls')),
+    url(r'^cart/', include('apps.cart.urls', namespace='cart')),
     # 购物车
-    url(r'^orders/', include('orders.urls', namespace='orders'))
+    url(r'^orders/', include('apps.orders.urls', namespace='orders'))
 ]

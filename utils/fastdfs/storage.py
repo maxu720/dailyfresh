@@ -1,3 +1,5 @@
+#coding=utf-8
+
 from django.core.files.storage import Storage
 from fdfs_client.client import Fdfs_client
 from django.conf import settings
